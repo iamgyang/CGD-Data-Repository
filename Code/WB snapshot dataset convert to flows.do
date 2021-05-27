@@ -69,6 +69,8 @@ format  `var' %td
 drop `var'_temp
 }
 
+clear all
+
 // for the variable of the approval date, make sure that it's the EARLIEST commitment
 // date
 sort id country

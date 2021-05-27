@@ -23,7 +23,7 @@ library(googledrive)
 
 # Get the end date of the period: (i.e. next next Friday)
 next_friday <- function(given_date) {
-  n_days_to_fri <- 6 - wday(given_date)
+  n_days_to_fri <- 8 - wday(given_date)
   z <- given_date + duration(n_days_to_fri, "days")
   return(z)
 }
@@ -43,7 +43,7 @@ waitifnot <- function(cond) {
 
 # GET NEXT FRIDAY --------------------------------------------
 
-end_day <- next_friday(next_friday(Sys.Date()) + 2)
+end_day <- next_friday(next_friday(Sys.Date()) + 87654)
 end_day <- format(end_day, format="%b %d")
 end_day <- month.abb[month(Sys.Date())]
 
@@ -68,6 +68,7 @@ names(dat) <- c("time", "email", "size")
 dat <- as.data.table(dat)
 dat[, ltime := shift(time, n = 1L, type = "lag")]
 dat[, difftime := time - ltime]
+dat <- NULL
 dat[, newperiod := difftime > 6 * 10 ^ 5]
 dat[, newperiod := as.numeric(newperiod)]
 dat <- na.omit(dat)
