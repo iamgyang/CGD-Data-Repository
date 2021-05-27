@@ -58,6 +58,11 @@ replace code = "NA" if country == "Namibia"
 
 loc bob_local 1 2 3 4 5
 
+******************************
+loc BHYFMCHALDKSMAHDISNMDJE repaid_to_ project_id
+********************RADICAL CHANGE 
+
+
 // Generate the date variable. Recall that this date is the END of the period
 // that the world bank is disbursing / commiting money. i.e. if the date shows
 // 2-1-2020, then the entry for that row would be the total amount of money the 
